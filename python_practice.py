@@ -5,6 +5,8 @@
 # %% ###########################################################
 # Problem 1: Practice writing pseudocode
 
+#name: Mona Abou-Assi
+
 # Write pseudocode that will input a integer N and output the sum of the first N numbers in the fibonacci sequence.
 # Fibonacci sequence starts: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 # Example: If N = 5, the output should be 0 + 1 + 1 + 2 + 3 = 7
@@ -41,14 +43,14 @@ N = 6
 a = 0 # set a to the first fibonacci number
 b = 1 # set b to the second fibonacci number
 count = 0
-total = 0
+total = 0 
 
 while count < N:
     total = total + b
 
     next_value = a + b
     a = b
-    b = next_value
+    b = next_value 
 
     count = count + 1
 
@@ -112,3 +114,4 @@ def sum_even_fib(limit):
 # Add your test cases here
 
 # %%
+ 

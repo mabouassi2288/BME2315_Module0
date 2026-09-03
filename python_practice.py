@@ -5,7 +5,8 @@
 # %% ###########################################################
 # Problem 1: Practice writing pseudocode
 
-#name: Mona Abou-Assi
+#name: Mona Abou-Assi 
+#year: 2
 
 # Write pseudocode that will input a integer N and output the sum of the first N numbers in the fibonacci sequence.
 # Fibonacci sequence starts: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...

@@ -46,33 +46,77 @@ set print = sum //prints the sum when we're finished iterating
 # %% ###########################################################
 # Problem 2: Comment your code
 # Comments are very helpful for others (especially when pair-coding!) and yourself to understand your code! Add comments to the following code, which will run but produces the wrong output. Once you comment the code, you should be able to identify the error and fix it (the correct total that should be printed is 12).
-N = 6
+N = 6 #sets N value to initial condition, which is 6
 
 a = 0 # set a to the first fibonacci number
 b = 1 # set b to the second fibonacci number
-count = 0
-total = 0 
+count = 0 # this is what controls how many times the while loop occurs
+total = 0 #this is going to be our final answer
 
 while count < N:
     #total = total + b // the problem is that the adding b to the total means it runs one extra time and actually adds the 7th term instead of stopping at the 6th term
     total = total + a #this ensures that the total being added stops at the 6th number, which is depicted with a
 
-    next_value = a + b
-    a = b
+    next_value = a + b #this makes the next value for b
+    a = b #this moves along the fibonacci sequence
     b = next_value 
 
     count = count + 1
 
-print(total)
+print(total) #prints out our answer (should be 12)
 
 # %% ###########################################################
 # Problem 3: Using common Python libraries
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
 
+import numpy as np #imports numpy so we can use the library for the standard deviation
+
+data = np.array([0,1,1,2,3,5,8,13,21,34]) #makes a list of data
+calculation = np.std(data) #calculates the standard deviation of the first 10 figures of the fibonacci sequence
+
+print(calculation)
+
+
 # %% ###########################################################
 # Problem 4: Don't repeat yourself by writing functions
 # Write a function that takes an integer N as input and returns the sum of the first N numbers in the fibonacci sequence.
 # Then use this function to calculate the sums for N = 5, 10, 15, 20, 25, and 30 and print them as a list.
+
+#USED AI: to inform me how to add a number to a list in a while loop (code on line 105)
+
+N = 5 #sets the starting variable for the fibonacci sequence
+
+a = 0 # set a to the first fibonacci number
+b = 1 # set b to the second fibonacci number
+count = 0 #same as problem 2
+total = 0 #same as problem 2
+N_count = 0 #this is the count for how many times we will run through the N while loop, which will be six times
+final_answer = [] #this is the list of values that needs to be filled
+stop = 6 #this is when we need to stop the outer while loop
+
+while N_count < stop: #this ensures that the outer loop will stop at N = 30
+
+    while count < N: #same while loop as problem 2
+        total = total + a #this ensures that the total being added stops at the 6th number, which is depicted with a
+
+        next_value = a + b
+        a = b
+        b = next_value 
+
+        count = count + 1
+
+
+    final_answer.append(total) #this adds the value to our final answer in list format every time the N while loop is finished
+
+    N = N + 5 #this accounts for the next N value 
+    N_count = N_count + 1 #this contributes to the outer while loop
+    total = 0 #resets the total so it can accurately do the fibonacci sequence on the next N number
+    count = 0 #resets the count 
+
+
+
+print(final_answer)
+
 
 # %% ###########################################################
 # Problem 5: Read your error messages

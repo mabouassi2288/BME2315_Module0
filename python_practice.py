@@ -54,7 +54,8 @@ count = 0
 total = 0 
 
 while count < N:
-    total = total + b
+    #total = total + b // the problem is that the adding b to the total means it runs one extra time and actually adds the 7th term instead of stopping at the 6th term
+    total = total + a #this ensures that the total being added stops at the 6th number, which is depicted with a
 
     next_value = a + b
     a = b

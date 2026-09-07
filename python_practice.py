@@ -8,33 +8,39 @@
 #name: Mona Abou-Assi 
 #year: 2
 #class: BME 2315
+#USE OF AI: asked AI to verify that my "N = int(input variable by user)" was properly written
 
 # Write pseudocode that will input a integer N and output the sum of the first N numbers in the fibonacci sequence.
 # Fibonacci sequence starts: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 # Example: If N = 5, the output should be 0 + 1 + 1 + 2 + 3 = 7
 
 """ # you can use three double-quotes to write multi-line comments
-START
-    Input N
 
-    IF N <= 0 THEN
-        Output 0
-        EXIT
-    ENDIF
+N = int(input variable by user) //creates the input variable that the user types in
 
-    Set sum = 0
-    Set a = 0
-    Set b = 1
+If N <= 0 // if the user inputs the number 0
+    then return 0 // returns 0 if the first number is equal or less than 0
 
-    FOR i from 1 TO N DO
-        Set sum = sum + a 
-        Set next_num = a + b
-        Set a = b
-        Set b = next_num
-    ENDFOR
-    
-    Output sum
-END
+If N = 1 // if the user inputs the number 1
+    then return 0 // the first number of the fibonacci sequence is 0, so it should return 0
+
+set a = 0 // this is the first number of fibonacci sequence
+set b = 1 // this is the second number of fibonacci sequence
+set count = 0 //sets the count, which is how many times the cycle iterates
+set sum = 0 //this will be the final sum, it changes as you go through each iteration
+
+If N >= 2 // if the user inputs an N value greater than or equal to 2
+    sum = a + b // sets up the sum to be a + b in the first place
+    while count < N //makes a while loop for as long as the count has gone through iterations before N
+        a = b //moves a to b 
+        b = a + b //moves b to the next number in fibonacci sequnces
+        sum = sum + b//sets sum equal to the most updated b value
+
+        count = count + 1 //updates the count for iterations, so we can stop when we reach N
+
+set print = sum //prints the sum when we're finished iterating 
+
+
 """
 
 # %% ###########################################################

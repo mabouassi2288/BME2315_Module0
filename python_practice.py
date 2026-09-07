@@ -82,7 +82,7 @@ print(calculation)
 # Write a function that takes an integer N as input and returns the sum of the first N numbers in the fibonacci sequence.
 # Then use this function to calculate the sums for N = 5, 10, 15, 20, 25, and 30 and print them as a list.
 
-#USED AI: to inform me how to add a number to a list in a while loop (code on line 105)
+#USED AI: to inform me how to add a number to a list in a while loop (code on line 109)
 
 N = 5 #sets the starting variable for the fibonacci sequence
 
@@ -135,14 +135,15 @@ def find_fib_above_limit(limit):
     :return: index of the first number above limit
     :rtype: integer
     """
-    a = "0"
-    b = "1"
+    a = 0 #took off the quotation marks to address TypeError in line 142
+    b = 1 #took off the quotation marks to address TypeError in line 142
+    index = 0 #added to fix the NameError in line 147
 
-    while a <= limit:
+    while a <= limit: #//TypeError: a and b are created as strings, when they should be integers
         next_value = a + b
         a = b
         b = next_value
-        index += 1
+        index += 1 #NameError: index was not defined, fixed in line 140
 
     return index
 

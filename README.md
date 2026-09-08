@@ -3,6 +3,7 @@ Repository for Module 0
 Name: Mona Abou-Assi
 Partner: none
 Date: 9/7/26
+Course: BME2315
 
 Description of this repository: Primary assignment in this repository is python_practice.py
 

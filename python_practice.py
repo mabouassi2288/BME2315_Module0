@@ -8,7 +8,7 @@
 #name: Mona Abou-Assi 
 #year: 2
 #class: BME 2315
-#USE OF AI: asked AI to verify that my "N = int(input variable by user)" was properly written
+#USE OF AI: asked AI to verify that my "N = (input variable by user)" was properly written, it stated that I needed to add "int" on the outside of the parentheses 
 
 # Write pseudocode that will input a integer N and output the sum of the first N numbers in the fibonacci sequence.
 # Fibonacci sequence starts: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
@@ -24,21 +24,22 @@ If N <= 0 // if the user inputs the number 0
 If N = 1 // if the user inputs the number 1
     then return 0 // the first number of the fibonacci sequence is 0, so it should return 0
 
-set a = 0 // this is the first number of fibonacci sequence
-set b = 1 // this is the second number of fibonacci sequence
-set count = 0 //sets the count, which is how many times the cycle iterates
-set sum = 0 //this will be the final sum, it changes as you go through each iteration
+SET a = 0 // this is the first number of fibonacci sequence
+SET b = 1 // this is the second number of fibonacci sequence
+SET count = 0 //sets the count, which is how many times the cycle iterates
+SET sum = 0 //this will be the final sum, it changes as you go through each iteration
 
 If N >= 2 // if the user inputs an N value greater than or equal to 2
-    sum = a + b // sets up the sum to be a + b in the first place
+    then SET sum = a + b // sets up the sum to be a + b in the first place
     while count < N //makes a while loop for as long as the count has gone through iterations before N
-        a = b //moves a to b 
-        b = a + b //moves b to the next number in fibonacci sequnces
-        sum = sum + b//sets sum equal to the most updated b value
+        SET tracker = a + b //makes a tracker so that b can become a + b without altering b so that a cannot become b
+        SET a = b //moves a to b 
+        SET b = tracker //moves b to the next number in fibonacci sequnces
+        SET sum = sum + a//sets sum equal to the most updated a value
 
-        count = count + 1 //updates the count for iterations, so we can stop when we reach N
+        SET count = count + 1 //updates the count for iterations, so we can stop when we reach N
 
-set print = sum //prints the sum when we're finished iterating 
+SET print = sum //prints the sum when we're finished iterating 
 
 
 """
@@ -82,7 +83,7 @@ print("Your standard deviation is: " + calculation)
 # Write a function that takes an integer N as input and returns the sum of the first N numbers in the fibonacci sequence.
 # Then use this function to calculate the sums for N = 5, 10, 15, 20, 25, and 30 and print them as a list.
 
-#USED AI: to inform me how to add a number to a list in a while loop (code on line 109)
+#USED AI: for instructions on how to add a number to a list in a while loop 
 
 N = 5 #sets the starting variable for the fibonacci sequence
 
@@ -160,12 +161,8 @@ def sum_even_fib(limit):
     total = 0
     while a <= limit:
         #if b % 2 == 0:   This line checks if the Fibonacci number is even, but we want the numbers to be odd
-        if a % 2 == 1: #this line checks if the Fibonacci number is odd
+        if a % 2 == 1: #this line checks if the Fibonacci number is odd, switched the criteria to evaluate a 
             total = total + a #this should be adding to the total, not replacing the total with the new b value, also it should be added by a, not b, because a is the one going in order
-            """numbercounter = a + b #this is preparing for b to be the next number in the fibonacci sequence
-            a = b #this makes a equal to b
-            b = numbercounter #this makes b the next number in the fibonacci sequence
-            """
 
         a, b = b, a + b
        
@@ -176,6 +173,8 @@ def sum_even_fib(limit):
 
 # Add your test cases here
 print(sum_even_fib(3)) #tester case, should print (0, 1, 1, 3)
+print(sum_even_fib(5))
+print(sum_even_fib(15))
 
 
 

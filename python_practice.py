@@ -71,10 +71,10 @@ print(total) #prints out our answer (should be 12)
 
 import numpy as np #imports numpy so we can use the library for the standard deviation
 
-data = np.array([0,1,1,2,3,5,8,13,21,34]) #makes a list of data
+data = [0,1,1,2,3,5,8,13,21,34] #makes a list of data
 calculation = np.std(data) #calculates the standard deviation of the first 10 figures of the fibonacci sequence
 
-print(calculation)
+print("Your standard deviation is: " + calculation)
 
 
 # %% ###########################################################
@@ -137,7 +137,7 @@ def find_fib_above_limit(limit):
     """
     a = 0 #took off the quotation marks to address TypeError in line 142
     b = 1 #took off the quotation marks to address TypeError in line 142
-    index = 0 #added to fix the NameError in line 147
+    index = 0 #added to fix the NameError
 
     while a <= limit: #//TypeError: a and b are created as strings, when they should be integers
         next_value = a + b
@@ -154,18 +154,30 @@ print("The index of the first number above your limit is: ", result)
 # Problem 6: Test your code
 # The following function will run but will output the wrong answer sometimes. Add test cases to verify that the function works correctly for a variety of inputs. If you find any inputs that produce incorrect outputs, fix the function. The function, when working properly, should return the sum of all odd Fibonacci numbers less than or equal to the input "limit".
 
-
 def sum_even_fib(limit):
     a, b = 0, 1
+    numbercounter = 0 #added this because there was no number counter for b. A was changing to b before b could change to a, they were getting each other confused
     total = 0
-    while b <= limit:
-        if b % 2 == 0:  # This line checks if the Fibonacci number is even
-            total = b
+    while a <= limit:
+        #if b % 2 == 0:   This line checks if the Fibonacci number is even, but we want the numbers to be odd
+        if a % 2 == 1: #this line checks if the Fibonacci number is odd
+            total = total + a #this should be adding to the total, not replacing the total with the new b value, also it should be added by a, not b, because a is the one going in order
+            """numbercounter = a + b #this is preparing for b to be the next number in the fibonacci sequence
+            a = b #this makes a equal to b
+            b = numbercounter #this makes b the next number in the fibonacci sequence
+            """
+
         a, b = b, a + b
+       
+
     return total
 
 
+
 # Add your test cases here
+print(sum_even_fib(3)) #tester case, should print (0, 1, 1, 3)
+
+
 
 # %%
  
